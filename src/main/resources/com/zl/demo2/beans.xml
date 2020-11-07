@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="car" class="com.zl.demo1.Car">
+        <property name="name" value="奥迪"/>
+    </bean>
+
+    <bean id="car1" class="com.zl.demo1.Car">
+        <property name="name" value="保时捷"/>
+    </bean>
+
+    <bean id="car2" parent="car1"/>
+
+    <bean id="user" class="com.zl.demo1.User">
+        <property name="name" value="路人甲Java"/>
+        <property name="car" ref="car"/>
+    </bean>
+</beans>

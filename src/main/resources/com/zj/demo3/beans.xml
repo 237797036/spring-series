@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--suppress ALL -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 1. 过反射调用构造方法创建bean对象 -->
+
+	<!-- 通过UserModel的默认构造方法创建UserModel对象 -->
+	<bean id="createBeanByConstructor1" class="com.zj.demo3.UserModel"/>
+
+	<!-- 通过UserModel有参构造方法创建UserModel对象 -->
+	<bean id="createBeanByConstructor2" class="com.zj.demo3.UserModel">
+		<constructor-arg index="0" value="我是通过UserModel的有参方法构造的对象!"/>
+		<constructor-arg index="1" value="30"/>
+	</bean>
+
+	<!-- 2. 通过静态工厂方法创建bean对象 -->
+	<!-- spring容器启动时调用UserStaticFactory中的buildUser1静态方法获取UserModel对象，
+	将其作为createBeanByStaticFactoryMethod1名称对应的bean对象放在spring容器中 -->
+
+	<!-- 通过工厂静态无参方法创建bean对象 -->
+	<bean id="createBeanByStaticFactoryMethod1" class="com.zj.demo3.UserStaticFactory" factory-method="buildUser1"/>
+
+	<!-- 通过工厂静态有参方法创建bean对象 -->
+	<bean id="createBeanByStaticFactoryMethod2" class="com.zj.demo3.UserStaticFactory" factory-method="buildUser2">
+		<constructor-arg index="0" value="通过工厂静态有参方法创建UerModel实例对象"/>
+		<constructor-arg index="1" value="30"/>
+	</bean>
+
+	<!-- 3. 通过实例工厂方法创建bean对象  -->
+	<!-- spring容器调用UserFactory对象中factory-method属性指定的方法，将此方法返回的对象作为当前bean对象放在容器中供使用 -->
+
+	<!-- 定义一个工厂实例 -->
+	<bean id="userFactory" class="com.zj.demo3.UserFactory"/>
+
+	<!-- 通过userFactory实例的无参user方法创建UserModel对象 -->
+	<bean id="createBeanByBeanMethod1" factory-bean="userFactory" factory-method="buildUser1"/>
+
+	<!-- 通过userFactory实例的有参user方法创建UserModel对象 -->
+	<bean id="createBeanByBeanMethod2" factory-bean="userFactory" factory-method="buildUser2">
+		<constructor-arg index="0" value="通过bean实例有参方法创建UserModel实例对象"/>
+		<constructor-arg index="1" value="30"/>
+	</bean>
+
+	<!-- 4. 通过FactoryBean来创建bean对象 -->
+	<!-- 通过FactoryBean 创建UserModel对象 -->
+	<bean id="createByFactoryBean" class="com.zj.demo3.UserFactoryBean"/>
+</beans>

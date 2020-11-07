@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <bean id="car1" class="com.zl.demo1.Car">
+        <property name="name" value="奥迪"/>
+    </bean>
+
+    <bean id="car2" class="com.zl.demo1.Car">
+        <property name="name" value="保时捷"/>
+    </bean>
+
+    <bean id="compositeObj" class="com.zl.demo1.CompositeObj">
+        <property name="name" value="路人甲Java"/>
+        <property name="salary" value="50000"/>
+        <property name="car1" ref="car1"/>
+        <property name="stringList">
+            <list>
+                <value>java高并发系列</value>
+                <value>mysql系列</value>
+                <value>maven高手系列</value>
+            </list>
+        </property>
+        <property name="carList">
+            <list>
+                <ref bean="car1"/>
+                <ref bean="car2"/>
+            </list>
+        </property>
+        <property name="stringSet">
+            <set>
+                <value>java高并发系列</value>
+                <value>mysql系列</value>
+                <value>maven高手系列</value>
+            </set>
+        </property>
+        <property name="carSet">
+            <set>
+                <ref bean="car1"/>
+                <ref bean="car2"/>
+            </set>
+        </property>
+        <property name="stringMap">
+            <map>
+                <entry key="系列1" value="java高并发系列"/>
+                <entry key="系列2" value="Maven高手系列"/>
+                <entry key="系列3" value="mysql系列"/>
+            </map>
+        </property>
+        <property name="stringCarMap">
+            <map>
+                <entry key="car1" value-ref="car1"/>
+                <entry key="car2" value-ref="car2"/>
+            </map>
+        </property>
+    </bean>
+</beans>

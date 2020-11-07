@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd" default-init-method="xxx">
+
+	<bean id="myValueCalculator" class="com.zj.other.ReplaceMethodTest$MyValueCalculator">
+		<replaced-method name="computeValue" replacer="replacementComputeValue">
+			<arg-type>string</arg-type>
+		</replaced-method>
+	</bean>
+
+	<bean id="replacementComputeValue" class="com.zj.other.ReplaceMethodTest$ReplacementComputeValue"/>
+</beans>

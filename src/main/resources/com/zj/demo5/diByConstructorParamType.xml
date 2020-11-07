@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 通过构造器参数的类型注入 -->
+	<bean id="diByConstructorParamType" class="com.zj.demo5.UserModel">
+		<constructor-arg type="int" value="30"/>
+		<constructor-arg type="java.lang.String" value="路人甲Java"/>
+		<constructor-arg type="java.lang.String" value="我是通过构造器参数类型注入的"/>
+	</bean>
+
+</beans>

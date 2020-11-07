@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="lazyInitBean" class="com.zj.demo11.LazyInitBean" lazy-init="true"/>
+
+    <!-- lazy-init，默认为false，表示是实时创建的bean，会在容器创建过程中被初始化 -->
+    <bean id="actualTimeDependencyLazyBean" class="com.zj.demo11.ActualTimeDependencyLazyBean">
+        <property name="lazyInitBean" ref="lazyInitBean"/>
+    </bean>
+</beans>

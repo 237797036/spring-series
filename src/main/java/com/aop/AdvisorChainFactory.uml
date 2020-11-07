@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.springframework.aop.framework.AdvisorChainFactory</OriginalElement>
+  <nodes>
+    <node x="-187.0" y="519.0">org.springframework.aop.framework.adapter.AfterReturningAdviceInterceptor</node>
+    <node x="118.0" y="279.0">org.springframework.aop.framework.adapter.DefaultAdvisorAdapterRegistry</node>
+    <node x="398.0" y="458.0">org.springframework.aop.framework.adapter.MethodBeforeAdviceAdapter</node>
+    <node x="149.0" y="458.0">org.springframework.aop.framework.adapter.ThrowsAdviceAdapter</node>
+    <node x="136.0" y="519.0">org.springframework.aop.framework.adapter.ThrowsAdviceInterceptor</node>
+    <node x="173.5" y="370.0">org.springframework.aop.framework.adapter.AdvisorAdapter</node>
+    <node x="-158.0" y="458.0">org.springframework.aop.framework.adapter.AfterReturningAdviceAdapter</node>
+    <node x="133.0" y="103.0">org.springframework.aop.framework.DefaultAdvisorChainFactory</node>
+    <node x="399.0" y="517.0">org.springframework.aop.framework.adapter.MethodBeforeAdviceInterceptor</node>
+    <node x="146.0" y="191.0">org.springframework.aop.framework.adapter.AdvisorAdapterRegistry</node>
+    <node x="161.0" y="15.0">org.springframework.aop.framework.AdvisorChainFactory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.aop.framework.adapter.MethodBeforeAdviceAdapter" target="org.springframework.aop.framework.adapter.AdvisorAdapter">
+      <point x="0.0" y="-19.0" />
+      <point x="540.5" y="433.0" />
+      <point x="323.5" y="433.0" />
+      <point x="60.0" y="19.0" />
+    </edge>
+    <edge source="org.springframework.aop.framework.adapter.AfterReturningAdviceAdapter" target="org.springframework.aop.framework.adapter.AdvisorAdapter">
+      <point x="0.0" y="-19.0" />
+      <point x="-14.5" y="433.0" />
+      <point x="203.5" y="433.0" />
+      <point x="-60.0" y="19.0" />
+    </edge>
+    <edge source="org.springframework.aop.framework.adapter.ThrowsAdviceAdapter" target="org.springframework.aop.framework.adapter.AdvisorAdapter">
+      <point x="0.0" y="-19.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="org.springframework.aop.framework.adapter.DefaultAdvisorAdapterRegistry" target="org.springframework.aop.framework.adapter.AdvisorAdapterRegistry">
+      <point x="0.0" y="-19.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+    <edge source="org.springframework.aop.framework.DefaultAdvisorChainFactory" target="org.springframework.aop.framework.AdvisorChainFactory">
+      <point x="0.0" y="-19.0" />
+      <point x="0.0" y="19.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="328.0" y="294.0" />
+  <SelectedNodes>
+    <node>org.springframework.aop.framework.AdvisorChainFactory</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>public</VISIBILITY>
+</Diagram>
+

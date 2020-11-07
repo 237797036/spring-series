@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="serviceA" class="com.zj.demo12.ServiceA"/>
+
+    <!-- 没有指定class对象，但是多了一个abstract="true"的属性，表示这个bean是抽象的，
+     abstract为true的bean在spring容器中不会被创建，只会将其当做bean定义的模板 -->
+    <bean id="baseService" abstract="true">
+        <property name="name" value="路人甲Java"/>
+        <property name="serviceA" ref="serviceA"/>
+    </bean>
+
+    <!-- 属性parent，用来指定当前bean的父bean名称，会继承父bean中定义的配置信息 -->
+    <bean id="serviceB" class="com.zj.demo12.ServiceB" parent="baseService"/>
+
+    <!-- 子bean也可以重新定义父bean中已经定义好的配置，这样子bean会覆盖父bean中的配置信息 -->
+    <bean id="serviceC" class="com.zj.demo12.ServiceC" parent="baseService">
+        <property name="name" value="欢迎和【路人甲Java】一起学些spring!"/>
+    </bean>
+
+</beans>
